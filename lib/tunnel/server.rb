@@ -52,23 +52,13 @@ module Tunnel
 
       spaces = ' ' * (TERMINAL_SIZE - (info.size + time_of_request.size))
 
-      puts yellow("#{request_info}#{spaces}#{time_of_request}")
+      puts yellow("#{info}#{spaces}#{time_of_request}")
     end
 
     def print_headers
       puts
-      puts purple(request.headers['VERSION'])
-
-      headers = request.headers.select { |header| header != 'VERSION' }
-      headers.each do |key, value|
-        name = humanize(key)
-
-        case name
-        when 'Version'
-          puts purple(value).strip
-        else
-          puts purple("#{name}: #{value}").strip
-        end
+      request.headers.each do |key, value|
+        puts purple("#{humanize(key)}: #{value}").strip
       end
     end
 

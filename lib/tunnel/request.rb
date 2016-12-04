@@ -19,7 +19,7 @@ module Tunnel
 
     def headers
       rack_request.env.each_with_object({}) do |(key, value), hash|
-        if key.start_with?('HTTP_')
+        if key.start_with?('HTTP_') && key != 'HTTP_VERSION'
           hash[key.gsub('HTTP_', '')] = value
         end
       end
