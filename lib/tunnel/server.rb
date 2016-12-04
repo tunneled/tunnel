@@ -34,6 +34,7 @@ module Tunnel
 
       response.finish
     rescue => exception
+      puts red(exception.to_s)
       puts red(exception.backtrace.join("\n"))
       binding.pry
     end
