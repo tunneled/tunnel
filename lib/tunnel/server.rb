@@ -75,7 +75,7 @@ module Tunnel
       <html>
       <div style="text-align:center;margin-top:100px;">
         <p style="font-size:50px;">👋</p>
-        <a style="font-size:12px;" href="https://git.io/v1WXJ">[source]</a>
+        <a style="font-size:12px;" href="https://git.io/v1lip">[source]</a>
         </div>
       </html>
       HTML
