@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'tunnel'
+require_relative '../lib/tunnel'
 
 Tunnel::Server.new(port: ARGV.first).start
