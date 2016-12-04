@@ -20,7 +20,8 @@ module Tunnel
     def headers
       rack_request.env.each_with_object({}) do |(key, value), hash|
         if key.start_with?('HTTP_') && key != 'HTTP_VERSION'
-          hash[key.gsub('HTTP_', '')] = value
+          name = humanize(key.gsub('HTTP_', ''))
+          hash[name] = value
         end
       end
     end
@@ -42,5 +43,10 @@ module Tunnel
     private
 
     attr_reader :rack_request
+
+    def humanize(string)
+      pieces = string.split(/_|-/)
+      pieces.map { |piece| piece.capitalize }.join('-')
+    end
   end
 end

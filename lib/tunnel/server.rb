@@ -65,7 +65,7 @@ module Tunnel
 
     def print_headers
       request.headers.each do |key, value|
-        puts purple("#{humanize(key)}: #{value}").strip
+        puts purple("#{key}: #{value}").strip
       end
     end
 
@@ -86,11 +86,6 @@ module Tunnel
         </div>
       </html>
       HTML
-    end
-
-    def humanize(string)
-      pieces = string.split(/_|-/)
-      pieces.map { |piece| piece.capitalize }.join('-')
     end
 
     def ssh_command
