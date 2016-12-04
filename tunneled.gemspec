@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tunnel/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "tunnel"
+  spec.name          = "tunneled"
   spec.version       = Tunnel::VERSION
   spec.authors       = ["Brooks Swinnerton"]
   spec.email         = ["bswinnerton@gmail.com"]
 
   spec.summary       = %q{Easily create reverse tunnels to your local computer from the internet.}
   spec.description   = %q{Easily create reverse tunnels to your local computer from the internet.}
-  spec.homepage      = "https://github.com/tunneled/tunnel"
+  spec.homepage      = "https://github.com/tunneled/tunneled"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,5 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "pry", "~> 0.10"
+  spec.add_development_dependency "pry"
+
+  spec.add_runtime_dependency "rack"
+  spec.add_runtime_dependency "puma"
 end
