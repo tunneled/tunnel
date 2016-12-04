@@ -1,4 +1,4 @@
-module Tunnel
+module Tunneled
   class Request
     def initialize(env)
       @env          = env

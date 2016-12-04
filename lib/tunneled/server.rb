@@ -1,7 +1,7 @@
 require_relative 'terminal_support'
 require_relative 'request'
 
-module Tunnel
+module Tunneled
   class Server
     include TerminalSupport
 

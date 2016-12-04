@@ -1,3 +1,3 @@
-module Tunnel
+module Tunneled
   VERSION = "0.1.0"
 end

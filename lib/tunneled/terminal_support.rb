@@ -1,4 +1,4 @@
-module Tunnel
+module Tunneled
   module TerminalSupport
     TERMINAL_SIZE = 80
 

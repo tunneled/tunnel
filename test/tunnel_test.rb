@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class TunnelTest < Minitest::Test
+class TunneledTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Tunnel::VERSION
+    refute_nil ::Tunneled::VERSION
   end
 
   def test_it_does_something_useful

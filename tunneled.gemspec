@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tunnel/version'
+require 'tunneled/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "tunneled"
-  spec.version       = Tunnel::VERSION
+  spec.version       = Tunneled::VERSION
   spec.authors       = ["Brooks Swinnerton"]
   spec.email         = ["bswinnerton@gmail.com"]
 
