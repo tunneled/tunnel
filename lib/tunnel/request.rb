@@ -25,7 +25,13 @@ module Tunnel
       end
     end
 
+    def formatted_body
+      return unless parsed_body
+      JSON.pretty_generate(parsed_body)
+    end
+
     def parsed_body
+      return if body.empty?
       JSON.parse(body)
     end
 

@@ -20,8 +20,11 @@ module Tunnel
 
       print_delimiter
       print_request_info
+      print_newline
       print_headers
-      print_body_and_yank_to_clipboard
+      print_newline
+      print_request_body
+      yank_request_body_to_clipboard
 
       #TODO: Forward request to http://localhost:#{port}
 
@@ -47,6 +50,10 @@ module Tunnel
       puts grey('*' * TERMINAL_SIZE)
     end
 
+    def print_newline
+      puts
+    end
+
     def print_request_info
       info            = "#{request.ip} - #{request.method} #{request.path}"
       time_of_request = Time.now.to_s
@@ -57,18 +64,17 @@ module Tunnel
     end
 
     def print_headers
-      puts
       request.headers.each do |key, value|
         puts purple("#{humanize(key)}: #{value}").strip
       end
     end
 
-    def print_body_and_yank_to_clipboard
-      return unless !request.body.empty?
-      formatted_json = JSON.pretty_generate(request.parsed_body)
-      system("echo '#{formatted_json}' | pbcopy")
-      puts
-      puts cyan(formatted_json)
+    def print_request_body
+      puts cyan(request.formatted_body)
+    end
+
+    def yank_request_body_to_clipboard
+      system("echo '#{request.formatted_body}' | pbcopy")
     end
 
     def default_html
