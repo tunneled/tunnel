@@ -88,7 +88,7 @@ module Tunnel
     end
 
     def ssh_command
-      "ssh -nNT -R 80:localhost:#{port} root@tunnel.computer"
+      "ssh -nNT -R 80:localhost:#{port} root@tunneled.computer"
     end
   end
 end
