@@ -47,10 +47,10 @@ module Tunnel
     end
 
     def print_request_info
-      request_info    = "#{request.ip} - #{request.method} #{request.path}"
+      info            = "#{request.ip} - #{request.method} #{request.path}"
       time_of_request = Time.now.to_s
 
-      spaces = ' ' * (TERMINAL_SIZE - (request_info.size + time_of_request.size))
+      spaces = ' ' * (TERMINAL_SIZE - (info.size + time_of_request.size))
 
       puts yellow("#{request_info}#{spaces}#{time_of_request}")
     end
